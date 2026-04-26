@@ -1,28 +1,18 @@
 [user]
-    name = "Joe Trenshaw"
-    email = joe@joetrenshaw.com
+	name = Joe Trenshaw
+	email = joe@joetrenshaw.com
+
+[alias]
+	tragicprometheus = git@github.com:jmtrensh/
+
+[url "git@github.com:tragicprometheus/"]
+	insteadOf = "tragicprometheus:"
+
+[pull]
+	ff = only
+[safe]
+	directory = *
 [core]
 	editor = nvim
 	autocrlf = true
 	fscache = true
-[mergetool]
-	keepBackup = false
-[pull]
-	rebase = false
-[fetch]
-	prune = false
-[rebase]
-	autoStash = false
-	autosquash = false
-	updateRefs = false
-[safe]
-	directory = *
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-[commit]
-	gpgsign = true
-[gpg]
-	format = ssh
