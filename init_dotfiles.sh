@@ -1,21 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 case "$OSTYPE" in
-  linux-gnu*)
+linux-gnu*)
 		echo "Linux"
 		zshrc_path="~/.zshrc"
 		gitconfig_path="~/.config/git/config"
 		sioyek_keys_config="~/.config/sioyek/keys_user.config"
 		sioyek_prefs_config="~/.config/sioyek/prefs_user.config"
 		;;
-  cygwin*|msys*|win32*)
+cygwin*|msys*|win32*)
 		echo "Windows (Cygwin/MSYS/Git Bash)"
 		# zshrc_path="~/.zshrc"
 		gitconfig_path="~/.gitconfig"
 		sioyek_keys_config="C:/ProgramData/sioyek/keys_user.config"
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
 		;;
-  *)
+*)
 		echo "Unknown OS: $OSTYPE"
 		;;
 esac
