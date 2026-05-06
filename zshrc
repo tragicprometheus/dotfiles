@@ -109,7 +109,7 @@ alias gf='git fetch'
 alias ga='git add .'
 
 # General Aliases
-alias ls='ls -a'
+alias ls='ls -xA'
 alias nvim-config='cd ~/.config/nvim'
 
 # Created by `pipx` on 2026-02-08 13:02:58
