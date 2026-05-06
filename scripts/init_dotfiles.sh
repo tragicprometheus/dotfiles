@@ -6,6 +6,7 @@ case "$OSTYPE" in
 linux-gnu*)
 		echo "Linux"
 		zshrc_path="~/.zshrc"
+		ohmyzsh_path="~/.oh-my-zsh"
 		gitconfig_path="~/.config/git/config"
 		sioyek_keys_config="~/.config/sioyek/keys_user.config"
 		sioyek_prefs_config="~/.config/sioyek/prefs_user.config"
@@ -23,6 +24,7 @@ cygwin*|msys*|win32*)
 esac
 
 cp ./zshrc $zshrc_path
+cp  ./oh-my-zsh $ohmyzsh_path
 cp ./gitconfig $gitconfig_path
 # Sioyek Configuraion 
 cp ./sioyek/keys_user.config $sioyek_keys_config
