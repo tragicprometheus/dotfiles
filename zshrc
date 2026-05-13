@@ -106,7 +106,7 @@ alias gca='git commit -a -m'
 alias gc='git commit -m'
 alias gp='git push'
 alias gf='git fetch'
-alias ga='git add .'
+alias gaa='git add .'
 
 # General Aliases
 alias ls='ls -xA'
