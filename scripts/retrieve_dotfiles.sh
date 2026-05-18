@@ -10,13 +10,16 @@ case "$OSTYPE" in
 		gitconfig_path="~/.config/git/config"
 		sioyek_keys_config="~/.config/sioyek/keys_user.config"
 		sioyek_prefs_config="~/.config/sioyek/prefs_user.config"
+		cp $zshrc_path ./zshrc
+		cp $ohmyzsh_path ./oh-my-zsh
 		;;
   cygwin*|msys*|win32*)
 		echo "Windows (Cygwin/MSYS/Git Bash)"
-		# zshrc_path="~/.zshrc"
+		bashrc_path="~/.bashrc"
 		gitconfig_path="~/.gitconfig"
 		sioyek_keys_config="C:/ProgramData/sioyek/keys_user.config"
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
+		cp $bashrc_path ./bashrc
 		;;
   *)
 		echo "Unknown OS: $OSTYPE"
@@ -24,8 +27,6 @@ case "$OSTYPE" in
 
 esac
 # Basics
-cp $zshrc_path ./zshrc
-cp $ohmyzsh_path ./oh-my-zsh
 cp $gitconfig_path ./gitconfig
 
 # Sioyek Configuraion

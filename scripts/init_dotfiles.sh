@@ -10,20 +10,22 @@ linux-gnu*)
 		gitconfig_path="~/.config/git/config"
 		sioyek_keys_config="~/.config/sioyek/keys_user.config"
 		sioyek_prefs_config="~/.config/sioyek/prefs_user.config"
+		cp ./zshrc $zshrc_path
+		cp  ./oh-my-zsh $ohmyzsh_path
 		;;
 cygwin*|msys*|win32*)
 		echo "Windows (Cygwin/MSYS/Git Bash)"
+		bashrc_path="~/.bashrc"
 		gitconfig_path="~/.gitconfig"
 		sioyek_keys_config="C:/ProgramData/sioyek/keys_user.config"
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
+		cp ./bashrc $bashrc_path
 		;;
 *)
 		echo "Unknown OS: $OSTYPE"
 		;;
 esac
 
-cp ./zshrc $zshrc_path
-cp  ./oh-my-zsh $ohmyzsh_path
 cp ./gitconfig $gitconfig_path
 
 # Sioyek Configuraion 
