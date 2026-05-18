@@ -12,11 +12,12 @@ case "$OSTYPE" in
 		sioyek_prefs_config="~/.config/sioyek/prefs_user.config"
 		cp $zshrc_path ./zshrc
 		cp $ohmyzsh_path ./oh-my-zsh
+		cp $gitconfig_path ./gitconfig
 		;;
   cygwin*|msys*|win32*)
 		echo "Windows (Cygwin/MSYS/Git Bash)"
-		bashrc_path="~/.bashrc"
-		gitconfig_path="~/.gitconfig"
+		bashrc_path="$HOME/.bashrc"
+		gitconfig_path="$HOME/.gitconfig"
 		sioyek_keys_config="C:/ProgramData/sioyek/keys_user.config"
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
 		cp $bashrc_path ./bashrc
@@ -26,8 +27,6 @@ case "$OSTYPE" in
 		;;
 
 esac
-# Basics
-cp $gitconfig_path ./gitconfig
 
 # Sioyek Configuraion
 cp $sioyek_keys_config ./sioyek/keys_user.config
