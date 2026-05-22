@@ -20,7 +20,9 @@ case "$OSTYPE" in
 		gitconfig_path="$HOME/.gitconfig"
 		sioyek_keys_config="C:/ProgramData/sioyek/keys_user.config"
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
+		yazi_config="$APPDATA/yazi/config/yazi.toml"
 		cp $bashrc_path ./bashrc
+		cp $yazi_config ./yazi.toml
 		;;
   *)
 		echo "Unknown OS: $OSTYPE"

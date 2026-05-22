@@ -20,7 +20,9 @@ cygwin*|msys*|win32*)
 		gitconfig_path="$HOME/.gitconfig"
 		sioyek_keys_config="C:/ProgramData/sioyek/keys_user.config"
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
+		yazi_config="$APPDATA/yazi/config/yazi.toml"
 		cp ./bashrc $bashrc_path
+		cp ./yazi.toml $yazi_config
 		;;
 *)
 		echo "Unknown OS: $OSTYPE"
