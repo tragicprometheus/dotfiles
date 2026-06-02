@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd ..
+pwd
 
 case "$OSTYPE" in
   linux-gnu*)
@@ -22,6 +23,8 @@ case "$OSTYPE" in
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
 		yazi_config="$APPDATA/yazi/config/yazi.toml"
 		cp $bashrc_path ./bashrc
+		cp $zshrc_path ./zshrc
+		cp $ohmyzsh_path ./oh-my-zsh
 		cp $yazi_config ./yazi.toml
 		;;
   *)

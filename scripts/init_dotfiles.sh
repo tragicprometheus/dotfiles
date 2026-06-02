@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cd ..
+pwd
 
 case "$OSTYPE" in
 linux-gnu*)
@@ -17,10 +18,14 @@ linux-gnu*)
 cygwin*|msys*|win32*)
 		echo "Windows (Cygwin/MSYS/Git Bash)"
 		bashrc_path="$HOME/.bashrc"
+		zshrc_path="$HOME/.zshrc"
+		ohmyzsh_path="$HOME/.oh-my-zsh"
 		gitconfig_path="$HOME/.gitconfig"
 		sioyek_keys_config="C:/ProgramData/sioyek/keys_user.config"
 		sioyek_prefs_config="C:/ProgramData/sioyek/prefs_user.config"
 		yazi_config="$APPDATA/yazi/config/yazi.toml"
+		cp ./zshrc $zshrc_path
+		cp  ./oh-my-zsh $ohmyzsh_path
 		cp ./bashrc $bashrc_path
 		cp ./yazi.toml $yazi_config
 		;;
