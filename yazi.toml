@@ -1,0 +1,32 @@
+[mgr]
+sort_by = "alphabetical"
+sort_sensitive = false
+sort_dir_first = true
+sort_reverse = false
+linemode = "mtime"
+show_hidden = true
+show_symlink = true
+scrolloff = 200
+ratio = [2, 4, 2]
+
+[opener]
+edit = [
+	{ run = "nvim %s", block = true },
+]
+pdf = [
+    { run = "sioyek %s", orphan = true },
+    { run = "\"C:/Program Files/Nitro/PDF Pro/14/NitroPDF.exe\" %s", orphan = true, desc = "Nitro" },
+]
+visual_studio = [
+    { run = "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/devenv.exe %s", orphan = true },
+]
+extract = [
+    { run = "7z x %s ", orphan = true}
+]
+
+[open]
+prepend_rules = [
+	{ url = "*.pdf", use = "pdf" },
+	{ url = "*.zip", use = "extract" },
+	{ url = "*.sln", use = "visual_studio" },
+]

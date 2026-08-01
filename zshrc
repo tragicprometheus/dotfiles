@@ -102,17 +102,41 @@ fi
 
 # Git aliases
 alias gs='git status'
-alias gca='git commit -a -m'
-alias gc='git commit -m'
+alias gca='git commit -a'
+alias gc='git commit'
 alias gp='git push'
 alias gf='git fetch'
 alias gaa='git add .'
 
+# Github CLI Aliases
+task-add()
+{
+    current_directory=$PWD
+    cd ~/Documents/01_Projects/PersonalTasks 
+    gh issue create
+    cd $current_directory
+}
+
 # General Aliases
 alias ls='ls -xA'
-alias nvim-config='cd ~/.config/nvim'
+alias pdf='sioyek'
 
-# Created by `pipx` on 2026-02-08 13:02:58
-export PATH="$PATH:/home/tragicprometheus/.local/bin"
+# OS Specific Settings
+case "$OSTYPE" in
+linux-gnu*)
+        alias nvim-config='cd ~/.config/nvim'
+
+        # Created by `pipx` on 2026-02-08 13:02:58
+        export PATH="$PATH:/home/tragicprometheus/.local/bin"
+        ;;
+cygwin*|msys*|win32*)
+        # Path aliases
+        alias gotonvim='cd $LOCALAPPDATA/nvim'
+        alias gotop='cd ~/Documents/01_Projects'
+        alias gotod='cd ~/Documents/02_Documents'
+        alias bookmark='sh ~/Documents/01_Projects/bookmarks/scripts/bookmark.sh'
+        ;;
+esac
+
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit

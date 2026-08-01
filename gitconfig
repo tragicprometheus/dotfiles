@@ -1,18 +1,59 @@
 [user]
-	name = Joe Trenshaw
-	email = joe@joetrenshaw.com
-
-[alias]
-	tragicprometheus = git@github.com:jmtrensh/
-
-[url "git@github.com:tragicprometheus/"]
-	insteadOf = "tragicprometheus:"
-
-[pull]
-	ff = only
-[safe]
-	directory = *
+    name = "Joe Trenshaw"
+    email = joseph.trenshaw@geaerospace.com
+    signingkey = C:/Users/223085047/.ssh/id_ed25519.pub
 [core]
 	editor = nvim
 	autocrlf = true
 	fscache = true
+	attributesfile = C:/Users/223085047/.gitattributes
+[diff]
+    tool = nvimdiff
+	guitool = TestStandDiff
+[difftool "TestStandDiff"]
+	path = C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe
+	cmd = \"C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe\" \"$LOCAL\" \"$REMOTE\"
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+    tool = nvimmerge
+	guitool = TestStandMerge
+[mergetool]
+	keepBackup = false
+[mergetool "TestStandMerge"]
+	path = C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe
+	cmd = \"C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool "nvimmerge"]
+    layout = "LOCAL,BASE,REMOTE / MERGED"
+    cmd = "nvim -d \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\""
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
+[safe]
+	directory = *
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[credential]
+	name = "Joe Trenshaw"
+	email = joseph.trenshaw@geaerospace.com
+	helper = store
+	host = githubus-lr.apps.cin.geaerospace.net
+	provider = github
+[difftool "TestStandMerge"]
+	path = C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe
+	cmd = C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool "TestStandDiff"]
+	path = C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe
+	cmd = C:/Program Files (x86)/National Instruments/Shared/TestStand/FileDifferLauncher.exe \"$LOCAL\" \"$REMOTE\"
